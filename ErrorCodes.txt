@@ -1,0 +1,4 @@
+Sharp Error List
+Code		| String Code			| Component		| Reason					| Fix
+------------------------------------------------------------------------------------------------------------------------------------
+0x558d70	| ERR_NO_INTERNET_ACCESS	| Updater		| No internet access on first run		| Connect to internet and run once

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sharp Scratch Mod</title>
+		<script>
+		document.addEventListener("DOMContentLoaded", function(){
+			var BrowserWindow = require("electron").remote.BrowserWindow;
+			var http = require("http");
+			var fs = require("fs");
+			var path = require("path");
+			var pluginName;
+			switch(process.platform){
+				case "win32":
+					pluginName = "pepflashplayer.dll";
+					break;
+				case "darwin":
+					pluginName = "PepperFlashPlayer.plugin";
+					break;
+				case "linux":
+					pluginName = "libpepflashplayer.so";
+					break;
+			}
+			if(!fs.existsSync(path.join(__dirname, pluginName))){
+				//alert("Please visit chrome://version in Google Chrome and enable Details and copy the path for Adobe Flash Player to " + __dirname);
+				//window.close();
+				window.location.href = path.join(__dirname, "SharpInstallGuide.html");
+			}
+			require("dns").lookup("sharpscratchmod.cf", function(err){
+				if(err){
+					if(fs.existsSync("Sharp.swf")){
+						window.location.href = "Sharp.swf";
+					}else{
+						window.location.href = "SharpErrNoInternet.html";
+					}
+				}else{
+					var cver;
+					http.get("http://sharpscratchmod.cf/SharpVersion.txt", function(res){
+						var body = '';
+						res.on("data", function(chunk){
+							body += chunk;
+						});
+						res.on("end", function(){
+							cver = body;
+							var ver = fs.existsSync(path.join(__dirname, "version.txt")) ? fs.readFileSync(path.join(__dirname, "version.txt")) : "0";
+							if(cver != ver){
+								document.getElementById("updates").innerHTML = "Sharp is downloading updates";
+								var pos = 0;
+								var str = "Sharp is downloading updates";
+								var file = fs.createWriteStream(path.join(__dirname, "Sharp.swf"));
+								fs.writeFileSync(path.join(__dirname, "version.txt"), cver);
+								http.get("http://sharpscratchmod.cf/Sharp.swf", function(res){
+									res.pipe(file);
+									res.on("data", function(c){
+										if(pos == 0){
+											document.getElementById("updates").innerHTML = str;
+											pos = 1;
+										}else if(pos == 1){
+											document.getElementById("updates").innerHTML = str + ".";
+											pos = 2;
+										}else if(pos == 2){
+											document.getElementById("updates").innerHTML = str + "..";
+											pos = 3;
+										}else if(pos == 3){
+											document.getElementById("updates").innerHTML = str + "...";
+											pos = 0;
+										}
+									});
+									res.on("end", function(){
+										window.location.href = "Sharp.swf";
+									});
+								});
+							}else{
+								window.location.href = "Sharp.swf";
+							}
+						});
+					});
+				}
+			});
+		});
+		</script>
+	</head>
+	<body style="background-color: whitesmoke;">
+		<center>
+			<h1 id="updates">Sharp is checking for updates...</h1>
+		</center>
+	</body>
+</html>

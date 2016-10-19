@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sharp Web Browser</title>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("url").onkeypress = function(e){
+					if(e.which == 13){
+						window.location.href = e.target.value;
+					}
+				};
+			});
+		</script>
+	</head>
+	<body style="background-color: whitesmoke;">
+		
+		<h1>Sharp Scratch Mod</h1>
+		<b>Enter the URL you would like to go to below. Enter to navigate to page.<b><br/><br/>
+		<input type="text" id="url" style="border: 1px solid black;border-radius: 5px; padding: 10px; width:90%;">
+		
+	</body>
+</html>

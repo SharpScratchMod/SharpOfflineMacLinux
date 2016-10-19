@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sharp Scratch Mod Setup Guide</title>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				switch(process.platform){
+					case "win32":
+						document.getElementById("windows").style.display = "block";
+						break;
+					case "darwin":
+						document.getElementById("osx").style.display = "block";
+						break;
+					case "linux":
+						document.getElementById("linux").style.display = "block";
+						break;
+					default:
+						document.getElementById("other").style.display = "block";
+						break;
+				}
+				document.getElementById("wait").style.display = "none";
+			});
+		</script>
+	</head>
+	<body style="background-color: whitesmoke">
+		<h1 id="wait">Please wait...</h1>
+		<div id="windows" style="display:none">
+			<h1>Sharp Setup Guide</h1>
+			<b>Guide for: Windows</b><br/>
+			* Install Google Chrome if you don't have it. (It must be the same 64-bit or 32-bit as Sharp Scratch Mod Offline Editor)<br/>
+			* Open Chrome and visit chrome://plugins<br/>
+			* Select Details<br/>
+			* Locate the location part of Adobe Flash Player and move it to <i><script>document.write(__dirname);</script></i><br/>
+			* If no location is said then visit http://sharpscratchmod.cf/Sharp.swf to get it to download it.
+		</div>
+		<div id="osx" style="display:none">
+			<h1>Sharp Setup Guide</h1>
+			<b>Guide for: OS X</b><br/>
+			* Install Google Chrome if you don't have it. (64-bit is required as Sharp Scratch Mod Offline Editor is 64-bit)<br/>
+			* Open Chrome and visit chrome://plugins<br/>
+			* Select Details<br/>
+			* Locate the location part of Adobe Flash Player and move it to <i><script>document.write(__dirname);</script></i><br/>
+			* If no location is said then visit http://sharpscratchmod.cf/Sharp.swf to get it to download it.
+		</div>
+		<div id="linux" style="display:none">
+			<h1>Sharp Setup Guide</h1>
+			<b>Guide for: Linux</b><br/>
+			* Install Google Chrome if you don't have it. (It must be the same 64-bit or 32-bit as Sharp Scratch Mod Offline Editor)<br/>
+			* Open Chrome and visit chrome://plugins<br/>
+			* Select Details<br/>
+			* Locate the location part of Adobe Flash Player and move it to <i><script>document.write(__dirname)</script></i><br/>
+			* If not location is said then visit http://sharpscratchmod.cf/Sharp.swf to get it to download it.
+		</div>
+		<div id="other" style="display:none">
+			<h1>Sharp Setup Guide</h1>
+			<b style="color:red">Invalid Platform: <script>document.write(process.platform);</script>; Supported are win32, darwin, linux!</b><br/>
+			<b>It might still work! Follow the steps below to try!</b><br/>
+			* Install Google Chrome if you don't have it. (It must be the same 64-bit or 32-bit as Sharp Scratch Mod Offline Editor)<br/>
+			* Open Chrome and visit chrome://plugins<br/>
+			* Select Details<br/>
+			* Locate the location part of Adobe Flash Player and move it to <i><script>document.write(__dirname)</script></i><br/>
+			* If not location is said then visit http://sharpscratchmod.cf/Sharp.swf to get it to download it.
+		</div>
+	</body>
+</html>

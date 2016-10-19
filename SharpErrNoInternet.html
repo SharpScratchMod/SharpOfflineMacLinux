@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>!Error! No Internet Access!</title>
+	</head>
+	<body style="background-color: whitesmoke">
+		<h1>Error: 0x558d70 (ERR_NO_INTERNET_ACCESS)</h1>
+		<b>Reason</b>: Internet is required on first run to download Sharp!<br/>
+		<b>Fix</b>: Connect to the internet, run Sharp and wait for Sharp to start<br/>
+		<pre>
+Sharp Offline Editor Partial Crash Log
+Code: 0x558d70 (ERR_NO_INTERNET_ACCESS)
+Cause for error: Could not resolve DNS of sharpscratchmod.cf - Most likely reason is no internet access.
+Component: Updater
+Platform: <script>document.write(process.platform);</script>
+Arch: <script>document.write(process.arch);</script>
+Node: <script>document.write(process.versions.node);</script>
+Electron: <script>document.write(process.versions.electron);</script>
+Chromium: <script>document.write(process.versions.chrome);</script>
+V8: <script>document.write(process.versions.v8);</script>
+Sharp: <script>document.write(require("fs").existsSync(require("path").join(__dirname, "version.txt")) ? require("fs").readFileSync(require("path").join(__dirname, "version.txt")) : "No version installed!")</script>
+		</pre>
+	</body>
+</html>

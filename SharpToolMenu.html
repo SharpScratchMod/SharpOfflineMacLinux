@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sharp Tool Menu</title>
+		<script>
+			const fs = require("fs");
+			const path = require("path");
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("force-update").onclick = function(){
+					fs.writeFileSync(path.join(__dirname, "version.txt"), "-1");
+				};
+				document.getElementById("reset").onclick = function(){
+					fs.unlinkSync(path.join(__dirname, "version.txt"));
+					fs.unlinkSync(path.join(__dirname, "Sharp.swf"));
+				};
+			});
+		</script>
+	</head>
+	<body style="background-color: whitesmoke;">
+		<h1>Sharp Tool Menu</h1>
+		<button id="force-update">Force Update</button>
+		<button id="reset">Reset</button>
+	</body>
+</html>

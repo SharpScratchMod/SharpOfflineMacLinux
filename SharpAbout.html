@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sharp Version Info</title>
+		<script>const fs = require("fs"); const path = require("path");</script>
+	</head>
+	<body style="background-color: whitesmoke;">
+		<h1>Sharp Version</h1><br/>
+		Sharp Version: <script>document.write(fs.existsSync(path.join(__dirname, "version.txt")) ? fs.readFileSync(path.join(__dirname, "version.txt")) : "No installed version");</script><br/>
+		Node: <script>document.write(process.versions.node);</script><br/>
+		Chromium: <script>document.write(process.versions.chrome);</script><br/>
+		Electron: <script>document.write(process.versions.electron);</script><br/>
+		V8: <script>document.write(process.versions.v8);</script><br/>
+		Platform: <script>document.write(process.platform);</script><br/>
+		Arch: <script>document.write(process.arch);</script><br/>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "sharpoffline",
+  "version": "1.0.0",
+  "description": "Sharp Offline Editor for Mac OS X and Linux.",
+  "main": "SharpOffline.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharpScratchMod/SharpOfflineMacLinux.git"
+  },
+  "keywords": [
+    "Sharp",
+    "Offline",
+    "Mac",
+    "Linux",
+    "OSX",
+    "MacOSX",
+    "MacOS"
+  ],
+  "author": "Sharp Scratch Mod Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SharpScratchMod/SharpOfflineMacLinux/issues"
+  },
+  "homepage": "https://github.com/SharpScratchMod/SharpOfflineMacLinux#readme"
+}
